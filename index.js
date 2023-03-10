@@ -57,6 +57,12 @@ const usersDB = getAllUsers()
 const PORT = process.env.PORT || 8082
 
 // Leo los datos que se encuentran en MongoAltlas
+app.get('/', async (req, res) => {
+  res.send('Hola desde render!')
+})
+
+
+// Leo los datos que se encuentran en MongoAltlas
 app.get('/users', async (req, res) => {
   const usersMongoAltas = await usersDB
   res.json({ users: usersMongoAltas })
